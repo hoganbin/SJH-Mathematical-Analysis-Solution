@@ -1,0 +1,263 @@
+\documentclass[cs5size]{ctexbook}
+\everymath{\displaystyle}
+\usepackage{hyperref}
+\usepackage{amssymb,longtable}
+\usepackage{amsmath}
+\usepackage{caption}
+%% 设置标题
+\usepackage{titlesec}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\noequiv}{\equiv \hspace*{-3.5mm} /~~}
+
+\makeatletter
+\g@addto@macro\normalsize{\setlength\abovedisplayskip{6pt}}
+\g@addto@macro\normalsize{\setlength\belowdisplayskip{6pt}}
+\g@addto@macro\normalsize{\setlength\abovedisplayshortskip{6pt}}
+\g@addto@macro\normalsize{\setlength\belowdisplayshortskip{6pt}}
+\makeatother
+
+\usepackage{bm}
+\arraycolsep=1.5pt
+\usepackage{newtxtext}
+\usepackage[papersize={170mm,240mm},hmargin={2cm,2cm},vmargin={2.5cm,2cm}]{geometry}
+\ctexset{
+	chapter ={
+		format=\centering\bfseries\zihao{2},
+		number = \arabic{chapter},
+		numberformat = \rmfamily,
+		%numberformat =\sffamily\color{gray},
+		beforeskip={10pt  plus .2ex  minus -.2ex},
+		afterskip={15pt  plus 3pt  minus -3pt}},
+	section = {
+		format=\zihao{4}\bfseries\raggedright,numberformat =\sffamily,
+		beforeskip={7pt  plus .2ex  minus -.2ex},afterskip={2pt   plus 1pt  minus 1pt}
+	},
+	subsection = {
+		format={\zihao{5}\bfseries\raggedright},
+		beforeskip={10pt plus .2ex minus -.2ex},
+		afterskip={3pt plus 2pt minus -1pt}}}
+\allowdisplaybreaks
+
+%	\usepackage[a4paper,margin=6mm]{geometry}
+
+\usepackage{draftwatermark}
+\SetWatermarkText{\shortstack
+	{未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载\\
+		未经授权，不许转载;
+		未经授权，不许转载
+}}
+\SetWatermarkLightness{0.95}%设置水印亮度
+\SetWatermarkScale{0.3}%设置水印大小
+\usepackage[thmmarks,amsmath]{ntheorem}
+{
+	\theoremstyle{nonumberplain}%不带标号
+	\theoremheaderfont{\bfseries}%证明题头加粗
+	\theorembodyfont{\normalfont}
+	%	\theorembodyfont{\songti}%楷书字体
+	\theoremsymbol{\mbox{$\blacksquare$}}%结束以后自动画出一个小黑色方块
+	%	\theoremsymbol{\mbox{$\Box$}}%结束以后自动画出一个小方块
+	\newtheorem{proof}{证明}%名字叫做"proof",会在题头自动写上证明
+}
+{
+	\theoremstyle{nonumberplain}%不带标号
+	\theoremheaderfont{\bfseries}%证明题头加粗
+	\theorembodyfont{\normalfont}
+	%	\theorembodyfont{\songti}%楷书字体
+	\theoremsymbol{\mbox{$\Box$}}%结束以后自动画出一个小方块
+	\newtheorem{solution}{解}%名字叫做"solution",会在题头自动写上证明
+}
+{
+	\theoremstyle{nonumberplain}%不带标号
+	\theoremheaderfont{\bfseries}%证明题头加粗
+	\theorembodyfont{\normalfont}
+	%	\theorembodyfont{\songti}%楷书字体
+	\theoremsymbol{\mbox{$\Box$}}%结束以后自动画出一个小方块
+	\newtheorem{remark}{说明}%名字叫做"remark",会在题头自动写上证明
+}
+{
+	\theoremstyle{nonumberplain}%不带标号
+	\theoremheaderfont{\bfseries}%证明题头加粗
+	\theorembodyfont{\normalfont}
+	%	\theorembodyfont{\songti}%楷书字体
+	\theoremsymbol{\mbox{$\Box$}}%结束以后自动画出一个小方块
+	\newtheorem{note}{注意}%名字叫做"note",会在题头自动写上证明
+}
+
+{
+	\theoremstyle{nonumberplain}%不带标号
+	\theoremheaderfont{\bfseries}%证明题头加粗
+	\theorembodyfont{\normalfont}
+	%	\theorembodyfont{\songti}%楷书字体
+	\theoremsymbol{\mbox{$\Box$}}%结束以后自动画出一个小方块
+	\newtheorem{tg}{推广}%名字叫做"tg",会在题头自动写上证明
+}
+
+%\theoremstyle{nonumberplain}
+\theoremstyle{plain}
+\theoremheaderfont{\bfseries}
+\theorembodyfont{\normalfont}
+\newtheorem{example}{例}
+\newtheorem{algorithm}{算法}
+\newtheorem{theorem}{定理}[section] 
+\newtheorem{definition}{定义}[section] 
+\newtheorem{axiom}{公理}
+\newtheorem{property}{性质}[section] 
+\newtheorem{proposition}{命题}
+\newtheorem{lemma}{引理}
+\newtheorem{corollary}{推论}
+\newtheorem{condition}{条件}
+\newtheorem{conclusion}{结论}
+\newtheorem{assumption}{假设}
+\newtheorem{ways}{方法}[subsection]
+%% 颜色
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{mtpro2}
+\renewcommand{\normalcolor}{\color{red}}
+
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,breakable,theorems}
+\usepackage{varwidth}
+\newenvironment{myitemize}{%
+	\begin{itemize}}{\end{itemize}}
+\tcolorboxenvironment{myitemize}{blanker,
+	before skip=6pt,after skip=6pt,
+	borderline west={3mm}{0pt}{red}}
+
+\newtcolorbox{Mybox}{colback=green!25!white,
+	colframe=blue!75!black}
+
+\newtcolorbox{mybox}[2][]{enhanced,breakable,
+	before skip=2mm,after skip=2mm,
+	colback=black!5,colframe=black!50,boxrule=0.2mm,
+	attach boxed title to top left={xshift=0.5cm,yshift*=1mm-\tcboxedtitleheight},
+	varwidth boxed title*=-0.5cm,
+	boxed title style={frame code={
+			\path[fill=tcbcol@back!30!black]
+			([yshift=-1mm,xshift=-1mm]frame.north west)
+			arc[start angle=0,end angle=180,radius=1mm]
+			([yshift=-1mm,xshift=1mm]frame.north east)
+			arc[start angle=180,end angle=0,radius=1mm];
+			\path[left color=tcbcol@back!60!black,right color=tcbcol@back!60!black,
+			middle color=tcbcol@back!80!black]
+			([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+			[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+			-- (frame.south east) -- (frame.south west)
+			-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+			[sharp corners]-- cycle;
+		},interior engine=empty,
+	},
+	fonttitle=\bfseries,
+	title={#2},#1}
+
+%---------------封面---------------%
+\newcommand{\myCover}{\includepdf{Cover/Cover.pdf}}
+
+%---------------标题页---------------%
+\makeatletter
+\newcommand{\HUGE}{\@setfontsize\Huge{54}{64.8}}
+\newcommand{\myLarge}{\@setfontsize\Huge{30}{36}}
+\makeatother
+\newcommand{\myTitlePage}{
+	\begin{center}
+		%		\vspace*{1 cm}
+		{
+			\LARGE \textbf{史济怀《数学分析教程》}
+			\\
+			\vspace*{0.5em}
+			\textbf{课后习题解答}\\
+		}
+		
+		\vspace{2 cm}
+		{
+			\includegraphics[scale=0.6]{4.png}
+			\\
+			\vspace*{0.5em}
+			笔者的留言....\\
+		}
+	
+		\vspace{7 cm}
+		{
+			
+			\huge \scshape %\addfontfeature{Numbers=OldStyle}
+			\today
+		}
+	\end{center}
+}
+
+\begin{document}
+	\myTitlePage
+	\tableofcontents
+	
+	\chapter*{前言}
+	\addcontentsline{toc}{chapter}{前言}
+	
+	\bigskip
+	本讲义主要对史济怀《数学分析教程》课后习题作出相关解答....balabala\\[10pt]
+	\null\hfill                                                                2019年10月\\\\
+	\null\hfill                                                                   八一\\
+	\null\hfill                                                                于\textbf{江西$\cdot$南昌}
+	
+	
+	\include{chap1}
+	\include{chap2}
+	\include{chap3}
+	\include{chap4}
+	\include{chap5}
+	\include{chap6}
+	\include{chap7}
+	\include{chap8}
+	\include{chap9}
+	\include{chap10}
+	\include{chap11}
+	\include{chap12}
+	\include{chap13}
+	\include{chap14}
+	\include{chap15}
+	\include{chap16}
+	\include{chap17}
+	\include{chap18}
+	\include{chap19}
+	\include{chap20}
+\end{document}
